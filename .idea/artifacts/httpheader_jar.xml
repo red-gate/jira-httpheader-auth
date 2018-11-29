@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="httpheader:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/httpheader_jar</output-path>
+    <root id="archive" name="httpheader_jar.jar">
+      <element id="module-output" name="httpheader" />
+    </root>
+  </artifact>
+</component>
