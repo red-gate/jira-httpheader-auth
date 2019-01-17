@@ -43,6 +43,9 @@ public class HttpHeaderAuthenticator extends com.atlassian.jira.security.login.J
         }
 
         this.authoriseUserAndEstablishSession(request, response, user);
+        // Set the remember me cookie to work around suspected "Bot Killer plugin" bug which ends up
+        // destroying sessions after 1h of inactivity rather than 5
+        this.getRememberMeService().addRememberMeCookie(request, response, username);
         this.getElevatedSecurityGuard().onSuccessfulLoginAttempt(request, username);
         return user;
     }
